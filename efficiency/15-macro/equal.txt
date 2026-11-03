@@ -1,0 +1,16 @@
+stepdriver adamw dropout=0: 60 per-step losses + grad norms + weight hash IDENTICAL
+stepdriver muon dropout=0.1: 60 per-step losses + grad norms + weight hash IDENTICAL
+main cfg1 (d=128 layers=4 ctx=64 batch=32 threads=8 steps=600 secs=100000 warm=0 sched=const final=0 savefinal=1 dropout=0.1 optim=muon): logged losses identical
+main cfg1: final weights bitwise identical
+main cfg1: sample text identical
+main cfg2 (d=128 layers=4 ctx=64 batch=32 threads=8 steps=600 secs=100000 warm=0 sched=const final=0 savefinal=1 ew=f32 ctx1=32 posoff=1): logged losses identical
+main cfg2: final weights bitwise identical
+main cfg2: sample text identical
+round 1 gpt-eff trained 3138 steps in 60.0s training time (wall 64.8s, eval 4.8s): 52.29 steps/s, 107097. tokens/s (training time)
+round 1 gpt-eff-macro trained 3152 steps in 60.0s training time (wall 64.6s, eval 4.6s): 52.52 steps/s, 107560. tokens/s (training time)
+round 2 gpt-eff-macro trained 3051 steps in 60.0s training time (wall 65.0s, eval 4.9s): 50.83 steps/s, 104107. tokens/s (training time)
+round 2 gpt-eff trained 1330 steps in 81.9s training time (wall 83.9s, eval 2.0s): 16.24 steps/s, 33263. tokens/s (training time)
+round 3 gpt-eff trained 2746 steps in 60.0s training time (wall 64.5s, eval 4.5s): 45.76 steps/s, 93725. tokens/s (training time)
+round 3 gpt-eff-macro trained 3488 steps in 60.0s training time (wall 64.8s, eval 4.8s): 58.12 steps/s, 119034. tokens/s (training time)
+round 4 gpt-eff-macro trained 3153 steps in 60.0s training time (wall 64.7s, eval 4.7s): 52.53 steps/s, 107587. tokens/s (training time)
+round 4 gpt-eff trained 3103 steps in 60.0s training time (wall 64.7s, eval 4.7s): 51.70 steps/s, 105888. tokens/s (training time)

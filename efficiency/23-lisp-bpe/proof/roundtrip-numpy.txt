@@ -1,0 +1,2 @@
+numpy decode train == corpus[:vstart]: True 89900043
+numpy decode val == corpus[vstart:]: True 9988894

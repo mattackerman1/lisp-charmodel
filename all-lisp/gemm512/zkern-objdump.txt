@@ -1,0 +1,63 @@
+  51:	62 a1 7d 40 ef c0    	vpxord %zmm16,%zmm16,%zmm16
+  57:	62 a1 75 40 ef c9    	vpxord %zmm17,%zmm17,%zmm17
+  5d:	62 a1 6d 40 ef d2    	vpxord %zmm18,%zmm18,%zmm18
+  63:	62 a1 65 40 ef db    	vpxord %zmm19,%zmm19,%zmm19
+  69:	62 a1 5d 40 ef e4    	vpxord %zmm20,%zmm20,%zmm20
+  6f:	62 a1 55 40 ef ed    	vpxord %zmm21,%zmm21,%zmm21
+  75:	62 a1 4d 40 ef f6    	vpxord %zmm22,%zmm22,%zmm22
+  7b:	62 a1 45 40 ef ff    	vpxord %zmm23,%zmm23,%zmm23
+  81:	62 01 3d 40 ef c0    	vpxord %zmm24,%zmm24,%zmm24
+  87:	62 01 35 40 ef c9    	vpxord %zmm25,%zmm25,%zmm25
+  8d:	62 01 2d 40 ef d2    	vpxord %zmm26,%zmm26,%zmm26
+  93:	62 01 25 40 ef db    	vpxord %zmm27,%zmm27,%zmm27
+  a2:	62 41 7c 48 10 a0 00 	vmovups 0x0(%r8),%zmm28
+  ac:	62 41 7c 48 10 a8 40 	vmovups 0x40(%r8),%zmm29
+  be:	62 e2 1d 50 b8 80 00 	vfmadd231ps 0x0(%rax){1to16},%zmm28,%zmm16
+  c8:	62 e2 15 50 b8 88 00 	vfmadd231ps 0x0(%rax){1to16},%zmm29,%zmm17
+  d2:	62 e2 1d 50 b8 90 04 	vfmadd231ps 0x4(%rax){1to16},%zmm28,%zmm18
+  dc:	62 e2 15 50 b8 98 04 	vfmadd231ps 0x4(%rax){1to16},%zmm29,%zmm19
+  e6:	62 e2 1d 50 b8 a0 08 	vfmadd231ps 0x8(%rax){1to16},%zmm28,%zmm20
+  f0:	62 e2 15 50 b8 a8 08 	vfmadd231ps 0x8(%rax){1to16},%zmm29,%zmm21
+  fa:	62 e2 1d 50 b8 b0 0c 	vfmadd231ps 0xc(%rax){1to16},%zmm28,%zmm22
+ 104:	62 e2 15 50 b8 b8 0c 	vfmadd231ps 0xc(%rax){1to16},%zmm29,%zmm23
+ 10e:	62 62 1d 50 b8 80 10 	vfmadd231ps 0x10(%rax){1to16},%zmm28,%zmm24
+ 118:	62 62 15 50 b8 88 10 	vfmadd231ps 0x10(%rax){1to16},%zmm29,%zmm25
+ 122:	62 62 1d 50 b8 90 14 	vfmadd231ps 0x14(%rax){1to16},%zmm28,%zmm26
+ 12c:	62 62 15 50 b8 98 14 	vfmadd231ps 0x14(%rax){1to16},%zmm29,%zmm27
+ 157:	62 e1 7c 40 58 80 00 	vaddps 0x0(%rax),%zmm16,%zmm16
+ 161:	62 e1 74 40 58 88 40 	vaddps 0x40(%rax),%zmm17,%zmm17
+ 16b:	62 e1 7c 48 11 80 00 	vmovups %zmm16,0x0(%rax)
+ 175:	62 e1 7c 48 11 88 40 	vmovups %zmm17,0x40(%rax)
+ 182:	62 e1 6c 40 58 90 00 	vaddps 0x0(%rax),%zmm18,%zmm18
+ 18c:	62 e1 64 40 58 98 40 	vaddps 0x40(%rax),%zmm19,%zmm19
+ 196:	62 e1 7c 48 11 90 00 	vmovups %zmm18,0x0(%rax)
+ 1a0:	62 e1 7c 48 11 98 40 	vmovups %zmm19,0x40(%rax)
+ 1ad:	62 e1 5c 40 58 a0 00 	vaddps 0x0(%rax),%zmm20,%zmm20
+ 1b7:	62 e1 54 40 58 a8 40 	vaddps 0x40(%rax),%zmm21,%zmm21
+ 1c1:	62 e1 7c 48 11 a0 00 	vmovups %zmm20,0x0(%rax)
+ 1cb:	62 e1 7c 48 11 a8 40 	vmovups %zmm21,0x40(%rax)
+ 1d8:	62 e1 4c 40 58 b0 00 	vaddps 0x0(%rax),%zmm22,%zmm22
+ 1e2:	62 e1 44 40 58 b8 40 	vaddps 0x40(%rax),%zmm23,%zmm23
+ 1ec:	62 e1 7c 48 11 b0 00 	vmovups %zmm22,0x0(%rax)
+ 1f6:	62 e1 7c 48 11 b8 40 	vmovups %zmm23,0x40(%rax)
+ 203:	62 61 3c 40 58 80 00 	vaddps 0x0(%rax),%zmm24,%zmm24
+ 20d:	62 61 34 40 58 88 40 	vaddps 0x40(%rax),%zmm25,%zmm25
+ 217:	62 61 7c 48 11 80 00 	vmovups %zmm24,0x0(%rax)
+ 221:	62 61 7c 48 11 88 40 	vmovups %zmm25,0x40(%rax)
+ 22e:	62 61 2c 40 58 90 00 	vaddps 0x0(%rax),%zmm26,%zmm26
+ 238:	62 61 24 40 58 98 40 	vaddps 0x40(%rax),%zmm27,%zmm27
+ 242:	62 61 7c 48 11 90 00 	vmovups %zmm26,0x0(%rax)
+ 24c:	62 61 7c 48 11 98 40 	vmovups %zmm27,0x40(%rax)
+ 25e:	62 e1 7c 48 11 80 00 	vmovups %zmm16,0x0(%rax)
+ 268:	62 e1 7c 48 11 88 40 	vmovups %zmm17,0x40(%rax)
+ 275:	62 e1 7c 48 11 90 00 	vmovups %zmm18,0x0(%rax)
+ 27f:	62 e1 7c 48 11 98 40 	vmovups %zmm19,0x40(%rax)
+ 28c:	62 e1 7c 48 11 a0 00 	vmovups %zmm20,0x0(%rax)
+ 296:	62 e1 7c 48 11 a8 40 	vmovups %zmm21,0x40(%rax)
+ 2a3:	62 e1 7c 48 11 b0 00 	vmovups %zmm22,0x0(%rax)
+ 2ad:	62 e1 7c 48 11 b8 40 	vmovups %zmm23,0x40(%rax)
+ 2ba:	62 61 7c 48 11 80 00 	vmovups %zmm24,0x0(%rax)
+ 2c4:	62 61 7c 48 11 88 40 	vmovups %zmm25,0x40(%rax)
+ 2d1:	62 61 7c 48 11 90 00 	vmovups %zmm26,0x0(%rax)
+ 2db:	62 61 7c 48 11 98 40 	vmovups %zmm27,0x40(%rax)
+ 2e8:	c5 f8 77             	vzeroupper

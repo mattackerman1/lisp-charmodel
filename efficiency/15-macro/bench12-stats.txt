@@ -1,0 +1,3 @@
+gpt-eff median 48.73 mean 44.96 n=8 [52.29, 16.24, 45.76, 51.7, 44.55, 52.7, 51.82, 44.6]
+gpt-eff-macro median 51.67 mean 47.15 n=8 [52.52, 50.83, 58.12, 52.53, 47.69, 44.78, 56.1, 14.6]
+ratio macro/old steps/s: median 1.060

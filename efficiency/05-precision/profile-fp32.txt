@@ -1,0 +1,29 @@
+           Self        Total        Cumul
+  Nr  Count     %  Count     %  Count     %    Calls  Function
+------------------------------------------------------------------------
+   1  21455  46.9  21455  46.9  21455  46.9        -  foreign function sgemm_kernel_COOPERLAKE
+   2   4445   9.7   4445   9.7  25900  56.7        -  GPT::GELU
+   3   3253   7.1  15972  34.9  29153  63.8        -  GPT::FORWARD-BACKWARD
+   4   2626   5.7   2631   5.8  31779  69.5        -  GPT::ATTENTION
+   5   1445   3.2   1445   3.2  33224  72.7        -  foreign function sgemm_oncopy_COOPERLAKE
+   6   1432   3.1   1432   3.1  34656  75.8        -  foreign function sgemm_itcopy_COOPERLAKE
+   7   1404   3.1   1404   3.1  36060  78.9        -  GPT::LAYERNORM
+   8   1199   2.6   1199   2.6  37259  81.5        -  GPT::LN-BACK
+   9   1118   2.4   1118   2.4  38377  84.0        -  GPT::GELU-BACK
+  10    909   2.0    909   2.0  39286  86.0        -  foreign function sgemm_incopy_COOPERLAKE
+  11    745   1.6    745   1.6  40031  87.6        -  foreign function sgemm_small_kernel_b0_nn_COOPERLAKE
+  12    739   1.6    739   1.6  40770  89.2        -  GPT::REDUCE-TENSOR
+  13    680   1.5    680   1.5  41450  90.7        -  foreign function sgemm_small_kernel_b0_nt_COOPERLAKE
+  14    623   1.4    623   1.4  42073  92.0        -  foreign function sgemm_otcopy_COOPERLAKE
+  15    478   1.0    483   1.1  42551  93.1        -  GPT::NEWTON-SCHULZ
+  16    363   0.8    846   1.9  42914  93.9        -  GPT::MUON-TENSOR
+  17    307   0.7    310   0.7  43221  94.6        -  GPT::ATTENTION-BACK
+  18    271   0.6    272   0.6  43492  95.2        -  GPT::LINEAR-BACK
+  19    224   0.5    224   0.5  43716  95.6        -  GPT::VADD
+  20     76   0.2     76   0.2  43792  95.8        -  foreign function sgemm_beta_COOPERLAKE
+  21     42   0.1     42   0.1  43834  95.9        -  foreign function pthread_mutex_lock
+  22     42   0.1     42   0.1  43876  96.0        -  GPT::ADAM-TENSOR
+  23     30   0.1   1100   2.4  43906  96.1        -  GPT::LINEAR
+  24     26   0.1     37   0.1  43932  96.1        -  SB-IMPL::INPUT-UNSIGNED-16BIT-BYTE
+  25     23   0.1     23   0.1  43955  96.2        -  SB-KERNEL:UB32-BASH-COPY
+  26     19   0.0     19   0.0  43974  96.2        -  (SB-VM::OPTIMIZED-DATA-VECTOR-SET (UNSIGNED-BYTE 16))

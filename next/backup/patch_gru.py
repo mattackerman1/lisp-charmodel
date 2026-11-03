@@ -1,0 +1,25 @@
+p='gru-big.lisp'; s=open(p).read()
+def rep(a,b,cnt=1):
+    global s
+    assert s.count(a)==cnt, (a[:60], s.count(a))
+    s=s.replace(a,b)
+rep('''         (budget (float (parse-integer (opt "secs" "480")) 1d0))''','''         (budget (float (parse-integer (opt "secs" "480")) 1d0))
+         (lr0 (float (read-from-string (opt "lr" "2e-3")) 1d0)) (sched (opt "sched" "const")) (warm 0.02d0)''')
+rep('''    (labels ((secs () (/ (- (get-internal-real-time) t0) internal-time-units-per-second 1d0))''',
+'''    (labels ((secs () (/ (- (get-internal-real-time) t0) internal-time-units-per-second 1d0))
+             (lr-at (fr) (if (string= sched "cosine")       ; 2% linear warmup then cosine to lr/10 over the wall-clock budget
+                             (if (< fr warm) (* lr0 (max 0.01d0 (/ fr warm)))
+                                 (+ (* 0.1d0 lr0) (* 0.9d0 lr0 0.5d0 (+ 1d0 (cos (* pi (min 1d0 (/ (- fr warm) (- 1d0 warm)))))))))
+                             lr0))
+             (write-csv () (with-open-file (fo (format nil "~a.csv" (opt "tag" "run")) :direction :output :if-exists :supersede)
+                             (format fo "step,seconds,train_batch,val_subset~%") (dolist (r (reverse hist)) (format fo "~{~a~^,~}~%" r))))''')
+rep('''| B=32 T=32 Adam 2e-3 clip 1 | budget ~ds~%"''','''| B=32 T=32 Adam lr ~a sched=~a clip 1 | budget ~ds~%"''')
+rep('''              h v (nparams n) (round budget))''','''              h v (nparams n) lr0 sched (round budget))''')
+rep('''(adam-step n (sum-grads ws) 2d-3)''','''(adam-step n (sum-grads ws) (lr-at (/ el budget)))''')
+rep('''                   (format t "step ~5d  t=~6,1fs  train(last batch)=~,4f  val(subset)=~,4f~%" step (secs) tl vl)
+                   (push (list step (secs) tl vl) hist) (finish-output))))''','''                   (format t "step ~5d  t=~6,1fs  lr=~,6f  train(last batch)=~,4f  val(subset)=~,4f~%" step (secs) (lr-at (/ (secs) budget)) tl vl)
+                   (push (list step (secs) tl vl) hist) (finish-output)
+                   (when (zerop (mod step 2000)) (write-csv)))))''')
+rep('''      (with-open-file (fo (format nil "~a.csv" (opt "tag" "run")) :direction :output :if-exists :supersede)
+        (format fo "step,seconds,train_batch,val_subset~%") (dolist (r (reverse hist)) (format fo "~{~a~^,~}~%" r)))''','''      (write-csv)''')
+open(p,'w').write(s)

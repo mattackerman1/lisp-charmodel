@@ -1,0 +1,7 @@
+# Copy to RUNDIR/run.conf, then: ln -s RUNDIR hardening/runs.d/ ; hardening/check-runs.sh
+# Example = run #13 (cyclic) args. No toff/secs arithmetic on resume: secs is the TOTAL budget; the state file carries train time.
+TAG=v16384-cyc
+ARGS="tokens=08-vocab-up/tokens16384.u16 vocab=08-vocab-up/vocab16384.hex vstart=23505859 fullval-targets=238949 d=256 layers=6 heads=8 ctx=64 batch=64 threads=8 dropout=0 seed=11 lr=1e-3 sched=cyc cycle=7200 cdecay=720 warm=0.000909 optim=muon mlr=0.01 ew=f32 secs=39600 fullval-every=1800 periodic-full=1 ckpt=1 savefinal=1"
+DYN=4000
+ACKPT=600
+KEEP=2

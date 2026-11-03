@@ -1,0 +1,22 @@
+== gcv=40
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 8.413d-4, global |g-num|/|num| = 4.371d-4
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.482d-4, global |g-num|/|num| = 3.577d-4
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.958d-4, global |g-num|/|num| = 2.646d-4
+== ssm=3 gcv=40
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=3 draws, V=40
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.764d-3, global |g-num|/|num| = 1.200d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=3 draws, V=40
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.382d-4, global |g-num|/|num| = 3.894d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=3 draws, V=40
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.020d-4, global |g-num|/|num| = 2.651d-4
+== ssm=12 gcv=40
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.569d-3, global |g-num|/|num| = 1.150d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.250d-4, global |g-num|/|num| = 4.385d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.693d-4, global |g-num|/|num| = 2.677d-4
+== 
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.708d-5, global |g-num|/|num| = 6.525d-5
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.188d-5, global |g-num|/|num| = 7.690d-5
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 4.460d-4, global |g-num|/|num| = 7.161d-4

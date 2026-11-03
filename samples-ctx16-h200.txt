@@ -1,0 +1,24 @@
+=== MLP sample (T=0.8) ===
+Iwh nothere strers, my lord, and the eld as the hous.
+
+SRCHLISHOP:
+And we the hath the sun yille sur in my gors.
+
+BRUTUS:
+A gatt tell film thee; and speak the tiering to the consul. Nur here cannst.
+
+Peting Murderer:
+Are the prince shoulder
+Biceest canny to that my farting my showhereal, what abude
+
+
+=== Bigram sample (T=0.8) ===
+The he t ENIs oustwaire plis, ir busig;
+IUCENot ne ld yo alme s nd we
+GLefofirouringh she iged th suth hin 'she te as ir thitis by:
+ETounoulade m cathe best chal be.
+Whe whaconanoo ps mu bber erstreand d m co cotrd,
+Gomathe I t f ved IVCowe.
+Tot, an an ur y sto min louse heret ile thathinee h Ye
+
+Wi

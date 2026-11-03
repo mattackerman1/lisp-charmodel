@@ -1,0 +1,7 @@
+BITWISE_EQUAL (2026-10-31): old gpt-eff.lisp.pre22b vs new gpt-eff.lisp (#22b flags off), BASE flags + steps=200 seed=1 final=0 savefinal=1
+final weights: cmp old-final-000200.f32 new-final-000200.f32 -> identical
+csv step/train/val columns and val1m identical (val1m 1.3191 both)
+de1236d17e4b3ee794af801ad96cc447e3a36a195adadb531e520781576472bb  ../../gpt-eff.lisp.pre22b
+8be0dbaa692053ad6f7a125ff5880d3462100cdffb47c8a3132e54261627b5cb  ../../gpt-eff.lisp
+cf7d075e92f30e3980d793a31012abe4947e415dabc5dc154a745d358e2966fc  old-final-000200.f32
+cf7d075e92f30e3980d793a31012abe4947e415dabc5dc154a745d358e2966fc  new-final-000200.f32

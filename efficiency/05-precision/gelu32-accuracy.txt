@@ -1,0 +1,1 @@
+GELU f32 vs f64 on [-12,12]: max |dG| 4.768e-7  max |dtanh| 1.267d-7

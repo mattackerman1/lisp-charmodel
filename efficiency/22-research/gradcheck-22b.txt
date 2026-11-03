@@ -1,0 +1,118 @@
+== gcv=40 ssm=12
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.569d-3, global |g-num|/|num| = 1.150d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.250d-4, global |g-num|/|num| = 4.385d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.693d-4, global |g-num|/|num| = 2.677d-4
+== gcv=40 untie=1
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2432 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.469d-4, global |g-num|/|num| = 1.635d-4
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2464 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.180d-3, global |g-num|/|num| = 1.713d-3
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2464 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 4.095d-4, global |g-num|/|num| = 7.848d-4
+== gcv=40 untie=1 ssm=12
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2432 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.142d-4, global |g-num|/|num| = 1.460d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2464 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.139d-3, global |g-num|/|num| = 1.753d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2464 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.956d-4, global |g-num|/|num| = 8.830d-4
+== gcv=40 ve=1
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2432 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 4.210d-4, global |g-num|/|num| = 3.976d-4
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2464 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.997d-4, global |g-num|/|num| = 4.815d-4
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2464 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 5.305d-3, global |g-num|/|num| = 5.251d-3
+== gcv=40 ve=1 ssm=12
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2432 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.775d-4, global |g-num|/|num| = 3.758d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2464 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.350d-4, global |g-num|/|num| = 4.274d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2464 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.140d-3, global |g-num|/|num| = 3.291d-3
+== gcv=40 unet=1
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2113 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 5.930d-4, global |g-num|/|num| = 6.353d-4
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2145 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 7.676d-4, global |g-num|/|num| = 9.448d-4
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2145 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.219d-4, global |g-num|/|num| = 2.209d-4
+== gcv=40 unet=1 ssm=12
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2113 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 4.549d-4, global |g-num|/|num| = 6.778d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2145 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 6.046d-4, global |g-num|/|num| = 8.790d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2145 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 9.936d-5, global |g-num|/|num| = 2.182d-4
+== gcv=40 softcap=2
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 9.739d-4, global |g-num|/|num| = 7.255d-4
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.147d-4, global |g-num|/|num| = 3.205d-4
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.947d-4, global |g-num|/|num| = 3.201d-4
+== gcv=40 softcap=2 ssm=12
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.104d-3, global |g-num|/|num| = 1.052d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.810d-4, global |g-num|/|num| = 4.209d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.759d-4, global |g-num|/|num| = 3.005d-4
+== gcv=400 softcap=2 ssm=12 (partial candidate set: V=400)
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=400
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=400 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 4992 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.943d-5, global |g-num|/|num| = 1.165d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=400
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=400 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 5024 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 6.785d-4, global |g-num|/|num| = 7.567d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=400
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=400 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 5024 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 5.488d-4, global |g-num|/|num| = 9.284d-4
+== gcv=40 relu2=1 ssm=12
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.217d-2, global |g-num|/|num| = 4.731d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.402d-3, global |g-num|/|num| = 1.575d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.030d-3, global |g-num|/|num| = 1.686d-3
+== gcv=40 qknorm=1 qkg=2 ssm=12
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 5.379d-2, max abs err 3.854d-3, global |g-num|/|num| = 2.696d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.925d-1, max abs err 1.824d-3, global |g-num|/|num| = 2.384d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 2.259d-1, max abs err 9.249d-4, global |g-num|/|num| = 1.391d-3
+== gcv=40 untie=1 ve=1 unet=1 softcap=2 ssm=12
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2753 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.143d-4, global |g-num|/|num| = 2.055d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2785 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.176d-4, global |g-num|/|num| = 3.221d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2785 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 6.528d-4, global |g-num|/|num| = 7.639d-4

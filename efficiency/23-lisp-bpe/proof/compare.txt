@@ -1,0 +1,43 @@
+== merges (Lisp vs original 08-vocab-up json, vs scratch rerun)
+ 16289 out/merges16384.hex
+ 16289 proof/merges-py-08-vocab-up.hex
+ 16289 proof/merges-py-py-scratch.hex
+ 48867 total
+merges cmp IDENTICAL (orig)
+merges cmp IDENTICAL (scratch)
+== vocab
+vocab cmp IDENTICAL
+== tokens full file
+full cmp IDENTICAL (orig)
+full cmp IDENTICAL (scratch)
+== train slice (first 23505859 tokens)
+cmp: proof/train_out_tokens16384.u16: No such file or directory
+== val slice (remaining 2588643 tokens)
+cmp: proof/val_out_tokens16384.u16: No such file or directory
+== sha256
+0967cae9463b4a19142c742737846b0f8fb044e1b98823ef9242e23a63e61fa9  out/tokens16384.u16
+0967cae9463b4a19142c742737846b0f8fb044e1b98823ef9242e23a63e61fa9  ../08-vocab-up/tokens16384.u16
+0967cae9463b4a19142c742737846b0f8fb044e1b98823ef9242e23a63e61fa9  py-scratch/tokens16384.u16
+sha256sum: 'proof/train_*': No such file or directory
+sha256sum: 'proof/val_*': No such file or directory
+aef489c29f271f82569669a93e05141a57741d68243bdde1ff83d44a91b24ad3  out/merges16384.hex
+aef489c29f271f82569669a93e05141a57741d68243bdde1ff83d44a91b24ad3  proof/merges-py-08-vocab-up.hex
+aef489c29f271f82569669a93e05141a57741d68243bdde1ff83d44a91b24ad3  proof/merges-py-py-scratch.hex
+== train slice (first 23505859 tokens = 47011718 bytes)
+train lisp vs py-orig: cmp IDENTICAL
+train lisp vs py-scratch: cmp IDENTICAL
+== val slice (remaining 2588643 tokens = 5177286 bytes)
+val lisp vs py-orig: cmp IDENTICAL
+val lisp vs py-scratch: cmp IDENTICAL
+-rw-r--r-- 1 box box 47011718 Nov  1 18:24 proof/train-lisp.u16
+-rw-r--r-- 1 box box 47011718 Nov  1 18:24 proof/train-py-orig.u16
+-rw-r--r-- 1 box box 47011718 Nov  1 18:24 proof/train-py-scratch.u16
+-rw-r--r-- 1 box box  5177286 Nov  1 18:24 proof/val-lisp.u16
+-rw-r--r-- 1 box box  5177286 Nov  1 18:24 proof/val-py-orig.u16
+-rw-r--r-- 1 box box  5177286 Nov  1 18:24 proof/val-py-scratch.u16
+60443969ec3fc027c7cf78c989371254f01cf5d4cb502f20177bbea2773adb5d  proof/train-lisp.u16
+60443969ec3fc027c7cf78c989371254f01cf5d4cb502f20177bbea2773adb5d  proof/train-py-orig.u16
+60443969ec3fc027c7cf78c989371254f01cf5d4cb502f20177bbea2773adb5d  proof/train-py-scratch.u16
+79ffd26e4e9f8343d4c54799235fa70f7e5ef78db3a33192a84a7ec83f79fd0e  proof/val-lisp.u16
+79ffd26e4e9f8343d4c54799235fa70f7e5ef78db3a33192a84a7ec83f79fd0e  proof/val-py-orig.u16
+79ffd26e4e9f8343d4c54799235fa70f7e5ef78db3a33192a84a7ec83f79fd0e  proof/val-py-scratch.u16

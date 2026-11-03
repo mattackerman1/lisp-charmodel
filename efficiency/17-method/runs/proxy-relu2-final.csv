@@ -1,0 +1,2 @@
+step,train_seconds,tokens_per_s,val_full10pct
+2500,1095.2,9350.,1.131059336900743d0

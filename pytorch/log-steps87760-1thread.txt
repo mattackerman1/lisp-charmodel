@@ -1,0 +1,65 @@
+PyTorch 2.14.0+cpu threads=1 vocab=62 train=270000 val=30000 params=39254 mode=steps 87760
+step   2000  t=   0.8s  batch-avg=2.5670  train=2.2995  val=2.4281
+step   4000  t=   2.4s  batch-avg=2.1968  train=2.1132  val=2.2119
+step   6000  t=   4.2s  batch-avg=2.0567  train=2.0076  val=2.0968
+step   8000  t=   6.0s  batch-avg=1.9770  train=1.9351  val=2.0140
+step  10000  t=   7.7s  batch-avg=1.9107  train=1.8779  val=1.9479
+step  12000  t=   9.4s  batch-avg=1.8680  train=1.8420  val=1.9131
+step  14000  t=  11.2s  batch-avg=1.8242  train=1.8191  val=1.9149
+step  16000  t=  12.9s  batch-avg=1.8008  train=1.7732  val=1.8731
+step  18000  t=  14.7s  batch-avg=1.7822  train=1.7561  val=1.8554
+step  20000  t=  16.5s  batch-avg=1.7608  train=1.7716  val=1.8792
+step  22000  t=  17.7s  batch-avg=1.7408  train=1.7244  val=1.8258
+step  24000  t=  18.9s  batch-avg=1.7155  train=1.7313  val=1.8368
+step  26000  t=  20.0s  batch-avg=1.7142  train=1.6967  val=1.8126
+step  28000  t=  21.1s  batch-avg=1.7022  train=1.7071  val=1.8381
+step  30000  t=  22.2s  batch-avg=1.7005  train=1.6792  val=1.7997
+step  32000  t=  23.3s  batch-avg=1.6799  train=1.6832  val=1.8127
+step  34000  t=  24.4s  batch-avg=1.6724  train=1.6649  val=1.7958
+step  36000  t=  25.5s  batch-avg=1.6557  train=1.6709  val=1.7948
+step  38000  t=  26.6s  batch-avg=1.6466  train=1.6579  val=1.7965
+step  40000  t=  27.7s  batch-avg=1.6479  train=1.6397  val=1.7748
+step  42000  t=  28.9s  batch-avg=1.6444  train=1.6686  val=1.8116
+step  44000  t=  30.2s  batch-avg=1.6429  train=1.6357  val=1.7737
+step  46000  t=  31.3s  batch-avg=1.6233  train=1.6615  val=1.8043
+step  48000  t=  32.4s  batch-avg=1.6277  train=1.6304  val=1.7748
+step  50000  t=  33.5s  batch-avg=1.6284  train=1.6104  val=1.7639
+step  52000  t=  34.7s  batch-avg=1.6073  train=1.6165  val=1.7710
+step  54000  t=  35.9s  batch-avg=1.6107  train=1.6325  val=1.7920
+step  56000  t=  37.0s  batch-avg=1.6088  train=1.6036  val=1.7760
+step  58000  t=  38.1s  batch-avg=1.6108  train=1.6001  val=1.7594
+step  60000  t=  39.5s  batch-avg=1.6039  train=1.5985  val=1.7498
+step  62000  t=  40.6s  batch-avg=1.5923  train=1.5850  val=1.7430
+step  64000  t=  41.8s  batch-avg=1.5931  train=1.6036  val=1.7628
+step  66000  t=  42.9s  batch-avg=1.6005  train=1.5469  val=1.7144
+step  68000  t=  44.1s  batch-avg=1.5155  train=1.5051  val=1.6720
+step  70000  t=  45.4s  batch-avg=1.4861  train=1.4937  val=1.6644
+step  72000  t=  46.6s  batch-avg=1.5088  train=1.4858  val=1.6608
+step  74000  t=  47.8s  batch-avg=1.4761  train=1.4811  val=1.6544
+step  76000  t=  48.9s  batch-avg=1.4850  train=1.4756  val=1.6494
+step  78000  t=  50.1s  batch-avg=1.4716  train=1.4747  val=1.6501
+step  80000  t=  51.2s  batch-avg=1.4706  train=1.4729  val=1.6470
+step  82000  t=  52.3s  batch-avg=1.4706  train=1.4705  val=1.6479
+step  84000  t=  53.5s  batch-avg=1.4708  train=1.4689  val=1.6454
+step  86000  t=  54.8s  batch-avg=1.4667  train=1.4658  val=1.6425
+trained 87760 steps in 55.9s (1570 steps/s); final train=1.4659 val=1.6439 (full train eval)
+
+=== PyTorch MLP sample (T=0.8) ===
+SICINIUS:
+We have done vowe many,
+And stises my so
+Mis intenterch interness,
+It sold a fair most to the mine:
+That less.
+
+CORIOLANUS:
+As yale but one would the lord.
+
+AUFIDIUS:
+If them the noble be once dend, and divitess tonguely. You don, for fear to them like all it prince
+This a this rether
+Tay'
+
+real	1m0.156s
+user	0m54.395s
+sys	0m6.481s

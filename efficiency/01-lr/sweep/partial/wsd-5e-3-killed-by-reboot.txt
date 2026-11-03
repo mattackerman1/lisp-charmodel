@@ -1,0 +1,21 @@
+dropout=0.0d0 (emb, attn probs, attn/MLP residual outputs; off at eval)
+config: GPT d=256 layers=6 heads=8 ctx=128 vocab=95 params=4796160 | batch 32 seqs (4096 tokens), threads=8 (x 4 seqs), FT=SINGLE-FLOAT
+AdamW lr=0.004999999888241291d0 betas 0.9/0.99 wd=0.10000000149011612d0 clip 1.0, schedule wsd warm=0.009999999776482582d0 decay=0.20000000298023224d0 lrmin=0.0d0 over 900s of training time (eval excluded) | data ../huge/corpus.txt | train chars 89900040, val chars 9988897 (last 10%)
+val protocol: windows of 128, stride 64, score 2nd half (context 64..127); periodic val = first 32000 val targets every 200 steps
+step    200  t=  46.9s  wall=  48.9s  lr=0.005000  train(last batch)=2.2041  val(subset)=2.1562
+step    400  t= 104.2s  wall= 108.3s  lr=0.005000  train(last batch)=1.8831  val(subset)=1.8492
+step    600  t= 163.3s  wall= 169.8s  lr=0.005000  train(last batch)=1.8184  val(subset)=1.7205
+step    800  t= 210.1s  wall= 218.4s  lr=0.005000  train(last batch)=1.7352  val(subset)=1.6176
+step   1000  t= 249.3s  wall= 259.3s  lr=0.005000  train(last batch)=1.7319  val(subset)=1.5568
+step   1200  t= 288.0s  wall= 300.1s  lr=0.005000  train(last batch)=1.6436  val(subset)=1.5087
+step   1400  t= 323.8s  wall= 337.5s  lr=0.005000  train(last batch)=1.6205  val(subset)=1.4613
+step   1600  t= 358.4s  wall= 373.7s  lr=0.005000  train(last batch)=1.5560  val(subset)=1.4230
+step   1800  t= 394.0s  wall= 411.0s  lr=0.005000  train(last batch)=1.5212  val(subset)=1.4034
+step   2000  t= 432.0s  wall= 450.7s  lr=0.005000  train(last batch)=1.5850  val(subset)=1.3733
+step   2200  t= 466.9s  wall= 487.1s  lr=0.005000  train(last batch)=1.5312  val(subset)=1.3616
+step   2400  t= 501.4s  wall= 523.2s  lr=0.005000  train(last batch)=1.5245  val(subset)=1.3393
+step   2600  t= 537.2s  wall= 561.1s  lr=0.005000  train(last batch)=1.4770  val(subset)=1.3405
+step   2800  t= 571.7s  wall= 597.1s  lr=0.005000  train(last batch)=1.4248  val(subset)=1.3232
+step   3000  t= 605.8s  wall= 632.8s  lr=0.005000  train(last batch)=1.4462  val(subset)=1.3087
+step   3200  t= 639.2s  wall= 667.8s  lr=0.005000  train(last batch)=1.4836  val(subset)=1.3043
+step   3400  t= 676.6s  wall= 706.7s  lr=0.005000  train(last batch)=1.4591  val(subset)=1.2915

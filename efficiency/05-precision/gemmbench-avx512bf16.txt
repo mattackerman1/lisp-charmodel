@@ -1,0 +1,11 @@
+syms: mkl sgemm 0x7f0957969410 bf16 0x7f0957962cb0 | ob16 sgemm (nil) sbgemm (nil)
+shape                OB-f32   MKL-f32  OB16-f32  MKL-bf16 MKL-bf16+cv OB-sbgemm  (GFLOP/s; bf16+cv = incl. fp32->bf16 conversion of both inputs)
+fwd qkv  X.W          201.9     222.0       0.0     119.5     100.7       0.0
+fwd proj X.W          205.9     228.1       0.0     122.8     114.6       0.0
+fwd fc   X.W          204.8     222.2       0.0     119.8     114.9       0.0
+fwd fc2  X.W          208.5     210.2       0.0     102.3     111.9       0.0
+head  X.Wte^T         201.3     226.3       0.0     119.3     116.6       0.0
+bwd gW fc X^T.dY      204.2     218.2       0.0     119.7      95.7       0.0
+bwd dX fc dY.W^T      207.6     207.8       0.0     117.7     111.1       0.0
+bwd gWte P^T.X        211.5     208.5       0.0     116.1     112.1       0.0
+attn 64x64x32         101.5     149.4       0.0     104.2      93.6       0.0

@@ -1,0 +1,20 @@
+== 
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.403d-5, global |g-num|/|num| = 6.501d-5
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.207d-5, global |g-num|/|num| = 7.697d-5
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 4.461d-4, global |g-num|/|num| = 7.170d-4
+== relu2=1
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.698d-4, global |g-num|/|num| = 2.898d-4
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 8.740d-5, global |g-num|/|num| = 2.011d-4
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 7.612d-4, global |g-num|/|num| = 1.352d-3
+== qknorm=1 qkg=2
+  max rel err (entries with |g|+|num|>1e-7) 1.656d-1, max abs err 4.580d-5, global |g-num|/|num| = 1.145d-4
+  max rel err (entries with |g|+|num|>1e-7) 2.280d-1, max abs err 7.958d-5, global |g-num|/|num| = 1.732d-4
+  max rel err (entries with |g|+|num|>1e-7) 2.324d-1, max abs err 1.058d-1, global |g-num|/|num| = 9.688d-2
+== softcap=2
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.944d-5, global |g-num|/|num| = 8.683d-5
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 4.148d-5, global |g-num|/|num| = 1.129d-4
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.706d-4, global |g-num|/|num| = 7.187d-4
+== relu2=1 qknorm=1 qkg=2 softcap=2
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.555d-4, global |g-num|/|num| = 4.427d-4
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.135d-4, global |g-num|/|num| = 4.521d-4
+  max rel err (entries with |g|+|num|>1e-7) 6.321d-1, max abs err 4.140d+0, global |g-num|/|num| = 1.030d+0

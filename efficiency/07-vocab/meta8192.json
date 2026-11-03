@@ -1,0 +1,10 @@
+{
+ "vocab": 8192,
+ "train_tokens": 25148548,
+ "val_tokens": 2763018,
+ "val1m_tokens": 253378,
+ "train_chars": 89900043,
+ "val_chars": 9988894,
+ "chars_per_token_train": 3.574760777441306,
+ "chars_per_token_val": 3.6152113377473474
+}

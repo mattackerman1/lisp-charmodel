@@ -1,0 +1,30 @@
+# Weights, checkpoints, optimizer state
+*.f32
+*.bin
+*.meta
+*.pt
+*-state-*
+# Token and data files
+*.u16
+corpus.txt
+input.txt
+**/raw/
+**/teacher/
+# Logs and run markers
+*.log
+*.out
+*.lock
+DONE
+STUCK
+# Environments, toolchains, binaries
+venv/
+.venv/
+pyenv/
+sbcl/
+openblas/
+*.so
+*.so.*
+# Backups
+*.bak
+*.bak-*
+__pycache__/

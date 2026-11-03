@@ -1,0 +1,26 @@
+=== MLP sample (T=0.8) ===
+RICILIUS:
+Why, so doar our grace wear the Volsciest, and the inding stands, on as less
+Aur grom the come than you all thy wife a branger he was be are the yepared. What they fellikes.
+
+First Lord Hastings canted
+Hath barious present may the goder anly prepiised
+When to dight as a may,
+'elsing death,
+
+=== Bigram sample (T=0.8) ===
+Fitld thin wapon t?
+
+Whis d.
+Whe, hererfrsthasithesen s.
+CEve the,
+S:
+
+O thachedand at, b! ginstit ald ghom' Whes lllyoull wid sthather me arevithe higisor.
+
+VWher, he ne ie chit wo ld th LI wama loutrsur Be wnatheanoupe' n ncous wh e y sencey d baursthy, te bave banod me s bime her fe this pindes.
+
+
+real	8m26.302s
+user	8m25.848s
+sys	0m0.173s

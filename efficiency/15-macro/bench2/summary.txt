@@ -1,0 +1,8 @@
+round 5 gpt-eff trained 2673 steps in 60.0s training time (wall 64.6s, eval 4.6s): 44.55 steps/s, 91233. tokens/s (training time)
+round 5 gpt-eff-macro trained 2862 steps in 60.0s training time (wall 64.2s, eval 4.2s): 47.69 steps/s, 97677. tokens/s (training time)
+round 6 gpt-eff-macro trained 2687 steps in 60.0s training time (wall 64.8s, eval 4.8s): 44.78 steps/s, 91705. tokens/s (training time)
+round 6 gpt-eff trained 3162 steps in 60.0s training time (wall 64.3s, eval 4.3s): 52.70 steps/s, 107923. tokens/s (training time)
+round 7 gpt-eff trained 3110 steps in 60.0s training time (wall 64.8s, eval 4.8s): 51.82 steps/s, 106134. tokens/s (training time)
+round 7 gpt-eff-macro trained 3367 steps in 60.0s training time (wall 64.9s, eval 4.8s): 56.10 steps/s, 114897. tokens/s (training time)
+round 8 gpt-eff-macro trained 2087 steps in 142.9s training time (wall 146.4s, eval 3.5s): 14.60 steps/s, 29902. tokens/s (training time)
+round 8 gpt-eff trained 2676 steps in 60.0s training time (wall 64.6s, eval 4.6s): 44.60 steps/s, 91335. tokens/s (training time)   [line restored from bench2/bench-gpt-eff-r8.log; log was moved mid-run]

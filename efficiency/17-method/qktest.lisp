@@ -1,0 +1,11 @@
+(load "gpt-eff.lisp") (in-package :gpt)
+;; isolated finite-difference check of qk-norm-back in double-ish: loss = sum c_i * y_i over q/k slices
+(let* ((R 3) (d 8) (nh 2) (n (* R 3 d)) (x (mkv n)) (c (mkv n)) (y (mkv n)) (rs (mkv (* R 2 nh))) (g (mkv n)) (worst 0d0) (sd 0d0) (sn 0d0))
+  (dotimes (i n) (setf (aref x i) (coerce (randn) 'single-float) (aref c i) (coerce (randn) 'single-float)))
+  (flet ((loss () (replace y x) (qk-norm y R d nh rs) (loop for i below n sum (* (coerce (aref c i) 'double-float) (aref y i)))))
+    (loss) (replace g c) (qk-norm-back g y R d nh rs)
+    (dotimes (i n)
+      (when (< (mod i (* 3 d)) (* 2 d))
+        (let* ((o (aref x i)) (e 1f-2) (lp (progn (setf (aref x i) (+ o e)) (loss))) (lm (progn (setf (aref x i) (- o e)) (loss))) (num (/ (- lp lm) (* 2 e))))
+          (setf (aref x i) o) (incf sd (expt (- num (aref g i)) 2)) (incf sn (expt num 2)) (setf worst (max worst (abs (- num (aref g i)))))))))
+  (format t "qk-norm-back isolated FD: max abs err ~,3e  global rel ~,3e~%" worst (sqrt (/ sd sn))))

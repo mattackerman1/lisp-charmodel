@@ -1,0 +1,82 @@
+== kd=rand kd-alpha=0.5 gcv=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=0.5d0
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.500d-4, global |g-num|/|num| = 1.303d-4
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.136d-5, global |g-num|/|num| = 7.745d-5
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 9.419d-5, global |g-num|/|num| = 2.874d-4
+== kd=rand kd-alpha=0.5 ssm=3 gcv=40
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=3 draws, V=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=0.5d0
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.424d-4, global |g-num|/|num| = 1.281d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=3 draws, V=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.225d-5, global |g-num|/|num| = 7.895d-5
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=3 draws, V=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 9.429d-5, global |g-num|/|num| = 2.878d-4
+== kd=rand kd-alpha=0.5 ssm=12 gcv=40
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=0.5d0
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.424d-4, global |g-num|/|num| = 1.285d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.235d-5, global |g-num|/|num| = 7.839d-5
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 9.405d-5, global |g-num|/|num| = 2.875d-4
+== kd=rand kd-alpha=1 ssm=12 gcv=40
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=1.0d0
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.140d-4, global |g-num|/|num| = 1.542d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=1.0d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.454d-5, global |g-num|/|num| = 7.516d-5
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck of the #22 KD loss: K=16 random teacher ids/row, kd-alpha=1.0d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 5.878d-5, global |g-num|/|num| = 2.184d-4
+== ssm=12 gcv=40
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2112 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.569d-3, global |g-num|/|num| = 1.150d-3
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.250d-4, global |g-num|/|num| = 4.385d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=40
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=40 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 2144 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.693d-4, global |g-num|/|num| = 2.677d-4
+== kd=rand kd-alpha=0.5 kd-k=2 ssm=12 gcv=400 (partial candidate set: V=400)
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=400
+gradcheck of the #22 KD loss: K=2 random teacher ids/row, kd-alpha=0.5d0
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=400 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 4992 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.175d-4, global |g-num|/|num| = 2.015d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=400
+gradcheck of the #22 KD loss: K=2 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=400 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 5024 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 5.178d-5, global |g-num|/|num| = 1.583d-4
+gradcheck of the #18 SAMPLED-SOFTMAX training loss: S=12 draws, V=400
+gradcheck of the #22 KD loss: K=2 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=400 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 5024 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.738d-4, global |g-num|/|num| = 4.677d-4
+== kd=rand kd-alpha=0.5 kd-k=2 gcv=400 (partial candidate set: V=400)
+gradcheck of the #22 KD loss: K=2 random teacher ids/row, kd-alpha=0.5d0
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=400 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 4992 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.543d-4, global |g-num|/|num| = 2.509d-4
+gradcheck of the #22 KD loss: K=2 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=400 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 5024 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.955d-5, global |g-num|/|num| = 1.173d-4
+gradcheck of the #22 KD loss: K=2 random teacher ids/row, kd-alpha=0.5d0
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=400 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 5024 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 2.368d-4, global |g-num|/|num| = 3.863d-4

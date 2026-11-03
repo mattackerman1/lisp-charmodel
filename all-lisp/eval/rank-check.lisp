@@ -1,0 +1,17 @@
+;;;; Lisp port of efficiency/17-method/rank_check.py: Kendall tau between early (15-min) and 1-h full-val rankings.
+(defun kendall (a b)
+  (let ((c 0) (d 0))
+    (loop for (x . rest) on (mapcar #'car a)
+          do (dolist (y rest)
+               (let ((s (* (- (cdr (assoc x a :test #'string=)) (cdr (assoc y a :test #'string=)))
+                           (- (cdr (assoc x b :test #'string=)) (cdr (assoc y b :test #'string=))))))
+                 (when (> s 0) (incf c)) (when (< s 0) (incf d)))))
+    (values (/ (- c d) (+ c d)) c d)))
+(defparameter *sets*
+  '(("#6 size (15-min mid-run val1M vs 1h full)" (("d256L6" . 1.0736d0) ("d192L6" . 1.0629d0) ("d256L8" . 1.0788d0) ("d384L6" . 1.0982d0)) (("d256L6" . 1.0729d0) ("d192L6" . 1.0825d0) ("d256L8" . 1.0729d0) ("d384L6" . 1.0803d0)))
+    ("#7 vocab (15-min mid-run val1M vs 1h full)" (("512" . 1.1030d0) ("1024" . 1.0934d0) ("2048" . 1.0736d0) ("4096" . 1.0561d0) ("8192" . 1.0434d0)) (("512" . 1.0938d0) ("1024" . 1.0871d0) ("2048" . 1.0729d0) ("4096" . 1.0656d0) ("8192" . 1.0582d0)))
+    ("#8 vocab up (15-min mid-run val1M vs 1h full)" (("8192" . 1.0434d0) ("16384" . 1.0380d0) ("32768" . 1.0459d0)) (("8192" . 1.0582d0) ("16384" . 1.0480d0) ("32768" . 1.0564d0)))
+    ("#1-#4 decayed 15-min proxies vs 1h full (winner pairs)" (("cos" . 1.1725d0) ("wsd" . 1.1708d0) ("muon" . 1.1317d0) ("ctx64" . 1.1444d0) ("bpe" . 1.0289d0)) (("cos" . 1.1680d0) ("wsd" . 1.1477d0) ("muon" . 1.1419d0) ("ctx64" . 1.1490d0) ("bpe" . 1.0775d0)))))
+(dolist (s *sets*)
+  (multiple-value-bind (tau c d) (kendall (second s) (third s))
+    (format t "~a: Kendall tau ~:[-~;+~]~,2f (~d concordant / ~d discordant pairs; ties skipped)~%" (first s) (>= tau 0) (abs (float tau 1d0)) c d)))

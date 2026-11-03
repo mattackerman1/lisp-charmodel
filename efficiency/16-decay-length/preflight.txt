@@ -1,0 +1,5 @@
+ok  sbcl: SBCL 2.5.2.debian (/home/box/opt/sbcl/bin/sbcl)
+ok  OpenBLAS: OpenBLAS 0.3.29 NO_LAPACKE DYNAMIC_ARCH NO_AFFINITY Cooperlake MAX_THREADS=128 ; sgemm 2x2 correct; sb-simd ok
+ok  matplotlib 3.11.2 (/home/box/opt/pyenv/bin/python)
+ok  data dir present
+PREFLIGHT OK

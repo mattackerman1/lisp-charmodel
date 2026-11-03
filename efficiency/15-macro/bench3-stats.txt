@@ -1,0 +1,3 @@
+gpt-eff: n=72 blocks of 100 steps  min 1.612s  p25 1.722s  median 1.792s
+gpt-eff-macro: n=72 blocks of 100 steps  min 1.596s  p25 1.741s  median 1.796s
+macro/old time ratio: min 0.990, p25 1.011, median 1.002

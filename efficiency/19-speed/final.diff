@@ -1,0 +1,66 @@
+669a670,709
+> ;; #19 change 1: wte (V*d floats, 16 MB x 8 workers) was reduced and AdamW-updated by ONE pool thread; its chunks are now spread over
+> ;; all threads (elementwise ops, so identical results; only the sequential double sum of squares is regrouped per chunk).
+> (defun reduce-range (gw lo hi)
+>   "Like REDUCE-TENSOR on elements [lo,hi) only (lo, hi multiples of 8 or hi = length); returns the sum of squares of the reduced range."
+>   (declare (simple-vector gw) (idx lo hi))
+>   (let* ((g0 (svref gw 0)) (k (length gw)) (s 0d0) (hi8 (+ lo (logand (- hi lo) (lognot 7)))))
+>     (declare (fvec g0) (fixnum k) (double-float s) (idx hi8))
+>     (loop for wi from 1 below k
+>           do (let ((bv (svref gw wi)) (z (v:f32.8 0f0)))
+>                (declare (fvec bv))
+>                (loop for q of-type idx from lo below hi8 by 8
+>                      do (setf (v:f32.8-aref g0 q) (v:f32.8+ (v:f32.8-aref g0 q) (v:f32.8-aref bv q))) (setf (v:f32.8-aref bv q) z))
+>                (loop for q of-type idx from hi8 below hi do (incf (aref g0 q) (aref bv q)) (setf (aref bv q) (f 0)))))
+>     (loop for q of-type idx from lo below hi do (incf s (* (coerce (aref g0 q) 'double-float) (aref g0 q))))
+>     s))
+> (defun adam-range (p g mm vv cs shrink lrc ic2 lo hi)
+>   (declare (fvec p g mm vv) (type fl cs shrink lrc ic2) (idx lo hi))
+>   (let ((vcs (v:f32.8 cs)) (vsh (v:f32.8 shrink)) (vlrc (v:f32.8 lrc)) (vic2 (v:f32.8 ic2))
+>         (b1 (v:f32.8 0.9f0)) (b1c (v:f32.8 0.1f0)) (b2 (v:f32.8 0.99f0)) (b2c (v:f32.8 0.01f0)) (eps (v:f32.8 1f-8)) (z (v:f32.8 0f0))
+>         (hi8 (+ lo (logand (- hi lo) (lognot 7)))))
+>     (declare (idx hi8))
+>     (loop for i of-type idx from lo below hi8 by 8
+>           do (let* ((gi (v:f32.8* vcs (v:f32.8-aref g i)))
+>                     (m1 (v:f32.8+ (v:f32.8* b1 (v:f32.8-aref mm i)) (v:f32.8* b1c gi)))
+>                     (v1 (v:f32.8+ (v:f32.8* b2 (v:f32.8-aref vv i)) (v:f32.8* (v:f32.8* b2c gi) gi))))
+>                (setf (v:f32.8-aref mm i) m1 (v:f32.8-aref vv i) v1
+>                      (v:f32.8-aref p i) (v:f32.8- (v:f32.8* vsh (v:f32.8-aref p i))
+>                                                   (v:f32.8/ (v:f32.8* vlrc m1) (v:f32.8+ (v:f32.8-sqrt (v:f32.8* v1 vic2)) eps)))
+>                      (v:f32.8-aref g i) z)))
+>     (sb-simd-avx:vzeroupper)
+>     (loop for i of-type idx from hi8 below hi
+>           do (let ((gi (* cs (aref g i))))
+>                (setf (aref mm i) (+ (* (f 0.9) (aref mm i)) (* (f 0.1) gi))
+>                      (aref vv i) (+ (* (f 0.99) (aref vv i)) (* (f 0.01) gi gi)))
+>                (setf (aref p i) (- (* shrink (aref p i)) (/ (* lrc (aref mm i)) (+ (sqrt (the (single-float 0f0) (* (aref vv i) ic2))) (f 1e-8)))))
+>                (setf (aref g i) (f 0))))))
+> (defvar *wte-parts* (mkd 64))
+> (defun wte-chunk (th nth* n)
+>   (let ((ch (* 8 (ceiling n (* 8 nth*))))) (values (min n (* th ch)) (min n (* (1+ th) ch)))))
+> 
+750,752c790,796
+<   (let ((asg (a-assign opt)) (gs (a-gs opt)) (parts (a-parts opt)))
+<     (declare (simple-vector asg gs) (dvec parts))
+<     (run-pool pool (lambda (th) (dolist (i (svref asg th)) (reduce-tensor (svref gs i) parts i))))
+---
+>   (let* ((asg (a-assign opt)) (gs (a-gs opt)) (parts (a-parts opt)) (nth* (length asg))
+>          (chunk-wte (and (> nth* 1) (<= nth* 64) (>= (length (the fvec (svref (a-ps opt) 0))) 1000000))))
+>     (declare (simple-vector asg gs) (dvec parts) (fixnum nth*))
+>     (run-pool pool (lambda (th) (when chunk-wte (multiple-value-bind (lo hi) (wte-chunk th nth* (length (the fvec (svref (a-ps opt) 0))))
+>                                                    (setf (aref *wte-parts* th) (reduce-range (svref gs 0) lo hi))))
+>                                 (dolist (i (svref asg th)) (unless (and chunk-wte (= i 0)) (reduce-tensor (svref gs i) parts i)))))
+>     (when chunk-wte (let ((s 0d0)) (declare (double-float s)) (dotimes (th nth*) (incf s (aref *wte-parts* th))) (setf (aref parts 0) s)))
+761c805,808
+<       (run-pool pool (lambda (th) (dolist (i (svref asg th))
+---
+>       (run-pool pool (lambda (th) (when chunk-wte
+>                                     (multiple-value-bind (lo hi) (wte-chunk th nth* (length (the fvec (svref ps 0))))
+>                                       (adam-range (svref ps 0) (svref (svref gs 0) 0) (svref ms 0) (svref vs 0) cs (if (svref dec 0) sh-d (f 1)) elrc ic2 lo hi)))
+>                                   (dolist (i (svref asg th))
+762a810
+>                                       (if (and chunk-wte (= i 0)) nil
+766c814
+<                                                        (if (svref dec i) sh-d (f 1)) (if (< i 2) elrc lrc) ic2))))))
+---
+>                                                        (if (svref dec i) sh-d (f 1)) (if (< i 2) elrc lrc) ic2)))))))

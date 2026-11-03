@@ -1,0 +1,20 @@
+
+; file: /home/box/lisp-charmodel/efficiency/gpt-eff.lisp
+; in: DEFUN MAKE-WK*
+;     (IF GPT::*EW32*
+;         (GPT::MKV (* GPT::R 4 GPT::D))
+;         (GPT::MKD (* GPT::R 4 GPT::D)))
+; 
+; caught WARNING:
+;   undefined variable: GPT::*EW32*
+; 
+; compilation unit finished
+;   Undefined variable:
+;     *EW32*
+;   caught 1 WARNING condition
+gradcheck FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=5 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 1832 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 1.403d-5, global |g-num|/|num| = 6.501d-5
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.0d0 (masks fixed): tiny GPT (V=5 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 1864 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 3.207d-5, global |g-num|/|num| = 7.697d-5
+gradcheck [SHORT-CTX: buffers T=8, 2x4 seqs of 4 at pos offset 3] FT=SINGLE-FLOAT dropout=0.2d0 (masks fixed): tiny GPT (V=5 d=8 L=2 heads=2 T=4), 2 workers x 2 seqs, 1864 params, eps=0.01d0
+  max rel err (entries with |g|+|num|>1e-7) 1.000d+0, max abs err 4.461d-4, global |g-num|/|num| = 7.170d-4

@@ -1,0 +1,26 @@
+[
+ {
+  "V": 512,
+  "chars_per_token": 2.338,
+  "emb_params": 131072,
+  "train_s": 4.0
+ },
+ {
+  "V": 1024,
+  "chars_per_token": 2.769,
+  "emb_params": 262144,
+  "train_s": 3.6
+ },
+ {
+  "V": 2048,
+  "chars_per_token": 3.133,
+  "emb_params": 524288,
+  "train_s": 3.7
+ },
+ {
+  "V": 4096,
+  "chars_per_token": 3.473,
+  "emb_params": 1048576,
+  "train_s": 3.8
+ }
+]

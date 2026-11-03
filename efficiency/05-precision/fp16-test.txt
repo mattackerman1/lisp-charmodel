@@ -1,0 +1,4 @@
+AVX512_E3 cblas_gemm_bf16bf16f32: 101 GFLOP/s/thread (8 threads concurrent, incl. setup), mismatches 0/2400
+AVX512_E3 cblas_gemm_f16f16f32: 166 GFLOP/s/thread (8 threads concurrent, incl. setup), mismatches 0/2400
+AVX512_E4 cblas_gemm_bf16bf16f32: 415 GFLOP/s/thread (8 threads concurrent, incl. setup), mismatches 15/2400
+AVX512_E4 cblas_gemm_f16f16f32: 165 GFLOP/s/thread (8 threads concurrent, incl. setup), mismatches 0/2400

@@ -1,0 +1,13 @@
+block 2.076 s
+block 1.848 s
+block 2.004 s
+block 2.140 s
+block 1.948 s
+block 1.824 s
+block 1.824 s
+block 1.768 s
+block 1.892 s
+block 2.376 s
+block 2.404 s
+block 2.612 s
+weights-sxhash 2933911958583867105

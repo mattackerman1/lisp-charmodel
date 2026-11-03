@@ -1,0 +1,8 @@
+### #10 interpretation
+
+- **How it ended:** hit the 12 h wall cap (10.27 h of training, 1.73 h of evals, 100,128 steps, ~17.4 passes over the 23.5M train tokens). The early stop never fired, because full val never rose for 3 evals in a row.
+- **Best point:** full val **1.0605** at 10.0 training h (step 97,608, 17.0 passes), the second-to-last eval. The very last eval at 10.27 h read 1.0635, which is within the eval-to-eval wobble of a constant-LR run (other bumps: 1.0615 to 1.0638 at 8.5 h).
+- **No classic overfitting:** full val kept creeping down the whole run and never turned up. It fell fast for 2 h (1.1203 to 1.0815), then slowly: 1.0682 at 4 h, 1.0653 at 6 h, 1.0615 at 8 h, 1.0605 at 10 h (only about 0.002 per hour after 4 h).
+- **Train-vs-val gap:** grew from +0.046 at 0.5 h to about +0.08 by 2 to 2.5 h (3.5 to 4.5 passes), then stayed flat in a +0.07 to +0.09 band for the rest of the run. So the memorisation gap opened during the first few passes and then stopped growing; train loss itself flattened near 0.98 after about 4 h. This looks like a model at its capacity at this LR, not one sliding into overfitting.
+- **Versus the 1 h v16384 run (#8, full val 1.0480):** 10 h of constant LR still ends **0.0125 worse** than 1 h with WSD decay. The 1 h run had already beaten this run's 10 h number by the end of its decay phase. That points to the missing LR decay, not the extra data passes, as the main difference.
+- **Hunch to test, not a finding:** a short WSD-style linear decay to 0 started from one of the late checkpoints (for example `v16384-const-ckpt-097608.f32`) would likely drop well below 1.0480, since the decay was worth a lot in the 1 h runs. That is the natural next test, one run at a time against the 1.0480 baseline.

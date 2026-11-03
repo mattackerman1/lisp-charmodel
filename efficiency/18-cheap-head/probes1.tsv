@@ -1,0 +1,14 @@
+18-cheap-head/probe18.sh: line 8: bc: command not found
+p16-full	V16		tok/s=8825.	chars/s=0
+18-cheap-head/probe18.sh: line 8: bc: command not found
+p16-s512	V16	ssm=512	tok/s=13457.	chars/s=0
+18-cheap-head/probe18.sh: line 8: bc: command not found
+p16-s1024	V16	ssm=1024	tok/s=15324.	chars/s=0
+18-cheap-head/probe18.sh: line 8: bc: command not found
+p16-s2048	V16	ssm=2048	tok/s=12351.	chars/s=0
+18-cheap-head/probe18.sh: line 8: bc: command not found
+p32-full	V32		tok/s=5309.	chars/s=0
+18-cheap-head/probe18.sh: line 8: bc: command not found
+p32-s1024	V32	ssm=1024	tok/s=13243.	chars/s=0
+18-cheap-head/probe18.sh: line 8: bc: command not found
+p32-s2048	V32	ssm=2048	tok/s=12777.	chars/s=0

@@ -1,0 +1,4 @@
+ok  sbcl: SBCL 2.5.2.debian (/home/box/opt/sbcl/bin/sbcl)
+PREFLIGHT FAIL: OpenBLAS missing at /nonexistent/libopenblas.so.0
+  fix: see /home/box/lisp-charmodel/efficiency/HARDENING.md (section Toolchain / reinstall)
+rc=1
