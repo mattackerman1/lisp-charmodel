@@ -14,7 +14,18 @@ flock -n 8 || { echo "q-abba already running"; exit 0; }
 BASE_SHA=8be0dbaa692053ad6f7a125ff5880d3462100cdffb47c8a3132e54261627b5cb
 got=$(sha256sum "$EFF/gpt-eff.lisp" | awk '{print $1}')
 [ "$got" = "$BASE_SHA" ] || { echo "REFUSING: $EFF/gpt-eff.lisp is $got, want $BASE_SHA"; exit 5; }
-echo "isolated $(sha256sum "$HERE/gpt-eff.lisp")"
+ISO=$(sha256sum "$HERE/gpt-eff.lisp" | awk '{print $1}')
+MARK=$HERE/proof/corpus200/VERIFIED
+if [ ! -f "$MARK" ] || ! grep -q '^VERIFIED_CORPUS200$' "$MARK" \
+   || ! grep -q "^baseline_sha256=$BASE_SHA$" "$MARK" \
+   || ! grep -q "^isolated_sha256=$ISO$" "$MARK"; then
+  echo "REFUSING: no matching real-corpus marker at $MARK"
+  echo "Run: bash $HERE/verify-corpus.sh"
+  echo "That is the v16384 d256-L6 200-step bitwise check. It is not this ABBA."
+  exit 6
+fi
+echo "isolated $ISO"
+echo "corpus marker ok"
 BASE="tokens=08-vocab-up/tokens16384.u16 vocab=08-vocab-up/vocab16384.hex vstart=23505859 fullval-targets=238949 d=256 layers=6 heads=8 ctx=64 batch=64 threads=8 dropout=0 lr=1e-3 optim=muon mlr=0.01 ew=f32 sched=wsd warm=0.01 decay=0.2 lrmin=0 ssm=1024 ssm-alpha=0.75 gemm=lisp512 fullval-every=900 savefinal=1"
 # tag|extra args   (ABBA: base s1, aux s1, aux s2, base s2)
 LIST="
