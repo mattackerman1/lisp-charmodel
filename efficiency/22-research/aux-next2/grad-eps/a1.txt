@@ -1,0 +1,53 @@
+
+; file: /workspace/efficiency/22-research/aux-next2/gpt-eff.lisp
+; in: DEFUN MAKE-WK*
+;     (IF GPT::*EW32*
+;         (GPT::MKV (* GPT::R 4 GPT::D))
+;         (GPT::MKD (* GPT::R 4 GPT::D)))
+; 
+; caught WARNING:
+;   undefined variable: GPT::*EW32*
+; 
+; compilation unit finished
+;   Undefined variable:
+;     *EW32*
+;   caught 1 WARNING condition
+N2EPS alpha=1.0d0 eps=0.01d0 group=WTE horizon=h2 global=3.822632d-3 maxabs=3.952980d-3 at=92
+N2EPS alpha=1.0d0 eps=0.01d0 group=WPE horizon=h2 global=4.981545d-3 maxabs=3.945043d-3 at=4
+N2EPS alpha=1.0d0 eps=0.01d0 group=TRUNK horizon=h2 global=1.599245d-4 maxabs=2.142525d-4 at=46
+N2EPS alpha=1.0d0 eps=0.01d0 group=U horizon=h2 global=1.477719d-5 maxabs=3.275382d-6 at=6
+N2EPS alpha=1.0d0 eps=0.01d0 group=ALL horizon=mix global=1.855766d-3 maxabs=3.952980d-3 at=WTE[92]
+N2EPS alpha=1.0d0 eps=0.003d0 group=WTE horizon=h2 global=3.628166d-4 maxabs=3.712441d-4 at=92
+N2EPS alpha=1.0d0 eps=0.003d0 group=WPE horizon=h2 global=4.727197d-4 maxabs=3.634881d-4 at=4
+N2EPS alpha=1.0d0 eps=0.003d0 group=TRUNK horizon=h2 global=1.425190d-4 maxabs=3.768108d-5 at=1
+N2EPS alpha=1.0d0 eps=0.003d0 group=U horizon=h2 global=4.809696d-5 maxabs=1.258020d-5 at=27
+N2EPS alpha=1.0d0 eps=0.003d0 group=ALL horizon=mix global=2.152160d-4 maxabs=3.712441d-4 at=WTE[92]
+N2EPS alpha=1.0d0 eps=0.001d0 group=WTE horizon=h2 global=1.539041d-4 maxabs=6.894393d-5 at=183
+N2EPS alpha=1.0d0 eps=0.001d0 group=WPE horizon=h2 global=1.709944d-4 maxabs=5.935960d-5 at=3
+N2EPS alpha=1.0d0 eps=0.001d0 group=TRUNK horizon=h2 global=4.192694d-4 maxabs=1.234865d-4 at=26
+N2EPS alpha=1.0d0 eps=0.001d0 group=U horizon=h2 global=1.606561d-4 maxabs=3.765253d-5 at=44
+N2EPS alpha=1.0d0 eps=0.001d0 group=ALL horizon=mix global=3.729430d-4 maxabs=1.234865d-4 at=TRUNK[26]
+N2EPS alpha=1.0d0 eps=3.0d-4 group=WTE horizon=h2 global=5.398697d-4 maxabs=2.188556d-4 at=179
+N2EPS alpha=1.0d0 eps=3.0d-4 group=WPE horizon=h2 global=7.494183d-4 maxabs=2.554249d-4 at=1
+N2EPS alpha=1.0d0 eps=3.0d-4 group=TRUNK horizon=h2 global=1.351416d-3 maxabs=3.502685d-4 at=71
+N2EPS alpha=1.0d0 eps=3.0d-4 group=U horizon=h2 global=4.736869d-4 maxabs=1.245785d-4 at=41
+N2EPS alpha=1.0d0 eps=3.0d-4 group=ALL horizon=mix global=1.210582d-3 maxabs=3.502685d-4 at=TRUNK[71]
+N2EPS alpha=1.0d0 eps=1.0d-4 group=WTE horizon=h2 global=1.429119d-3 maxabs=5.572043d-4 at=102
+N2EPS alpha=1.0d0 eps=1.0d-4 group=WPE horizon=h2 global=2.556427d-3 maxabs=9.992023d-4 at=6
+N2EPS alpha=1.0d0 eps=1.0d-4 group=TRUNK horizon=h2 global=4.121975d-3 maxabs=1.021873d-3 at=102
+N2EPS alpha=1.0d0 eps=1.0d-4 group=U horizon=h2 global=1.609129d-3 maxabs=3.780655d-4 at=18
+N2EPS alpha=1.0d0 eps=1.0d-4 group=ALL horizon=mix global=3.697982d-3 maxabs=1.021873d-3 at=TRUNK[102]
+N2DIR alpha=1.0d0 group=WTE horizon=h2 eps=0.01d0 gdot=1.328481d-2 sym=1.328258d-2 rel=1.679776d-4
+N2DIR alpha=1.0d0 group=WTE horizon=h2 eps=0.001d0 gdot=1.328481d-2 sym=1.332241d-2 rel=2.829794d-3
+N2DIR alpha=1.0d0 group=WTE horizon=h2 eps=1.0d-4 gdot=1.328481d-2 sym=1.262184d-2 rel=4.990476d-2
+N2DIR alpha=1.0d0 group=WPE horizon=h2 eps=0.01d0 gdot=5.182221d-2 sym=5.110728d-2 rel=1.379573d-2
+N2DIR alpha=1.0d0 group=WPE horizon=h2 eps=0.001d0 gdot=5.182221d-2 sym=5.184445d-2 rel=4.292837d-4
+N2DIR alpha=1.0d0 group=WPE horizon=h2 eps=1.0d-4 gdot=5.182221d-2 sym=5.160324d-2 rel=4.225357d-3
+N2DIR alpha=1.0d0 group=TRUNK horizon=h2 eps=0.01d0 gdot=8.367390d-2 sym=8.366870d-2 rel=6.212334d-5
+N2DIR alpha=1.0d0 group=TRUNK horizon=h2 eps=0.001d0 gdot=8.367390d-2 sym=8.362170d-2 rel=6.238090d-4
+N2DIR alpha=1.0d0 group=TRUNK horizon=h2 eps=1.0d-4 gdot=8.367390d-2 sym=8.346024d-2 rel=2.553444d-3
+N2DIR alpha=1.0d0 group=U horizon=h2 eps=0.01d0 gdot=-2.645145d-2 sym=-2.644747d-2 rel=1.503433d-4
+N2DIR alpha=1.0d0 group=U horizon=h2 eps=0.001d0 gdot=-2.645145d-2 sym=-2.645797d-2 rel=2.463920d-4
+N2DIR alpha=1.0d0 group=U horizon=h2 eps=1.0d-4 gdot=-2.645145d-2 sym=-2.618849d-2 rel=9.941035d-3
+N2EPS_SUMMARY alpha=1.0d0 global_1e-2=1.855766d-3 global_best=2.152160d-4 shrink=0.116
+N2EPS_PASS

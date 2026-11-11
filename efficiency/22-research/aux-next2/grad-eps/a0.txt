@@ -1,0 +1,45 @@
+
+; file: /workspace/efficiency/22-research/aux-next2/gpt-eff.lisp
+; in: DEFUN MAKE-WK*
+;     (IF GPT::*EW32*
+;         (GPT::MKV (* GPT::R 4 GPT::D))
+;         (GPT::MKD (* GPT::R 4 GPT::D)))
+; 
+; caught WARNING:
+;   undefined variable: GPT::*EW32*
+; 
+; compilation unit finished
+;   Undefined variable:
+;     *EW32*
+;   caught 1 WARNING condition
+N2EPS alpha=0.0d0 eps=0.01d0 group=WTE horizon=h1 global=1.646744d-3 maxabs=1.687744d-3 at=161
+N2EPS alpha=0.0d0 eps=0.01d0 group=WPE horizon=h1 global=2.637488d-3 maxabs=1.764010d-3 at=9
+N2EPS alpha=0.0d0 eps=0.01d0 group=TRUNK horizon=h1 global=2.597653d-4 maxabs=3.168610d-4 at=220
+N2EPS alpha=0.0d0 eps=0.01d0 group=ALL horizon=mix global=1.200446d-3 maxabs=1.764010d-3 at=WPE[9]
+N2EPS alpha=0.0d0 eps=0.003d0 group=WTE horizon=h1 global=1.588258d-4 maxabs=1.569992d-4 at=161
+N2EPS alpha=0.0d0 eps=0.003d0 group=WPE horizon=h1 global=2.414376d-4 maxabs=1.586266d-4 at=9
+N2EPS alpha=0.0d0 eps=0.003d0 group=TRUNK horizon=h1 global=1.555075d-4 maxabs=4.034076d-5 at=220
+N2EPS alpha=0.0d0 eps=0.003d0 group=ALL horizon=mix global=1.677944d-4 maxabs=1.586266d-4 at=WPE[9]
+N2EPS alpha=0.0d0 eps=0.001d0 group=WTE horizon=h1 global=1.309928d-4 maxabs=7.255297d-5 at=285
+N2EPS alpha=0.0d0 eps=0.001d0 group=WPE horizon=h1 global=1.619120d-4 maxabs=6.831948d-5 at=0
+N2EPS alpha=0.0d0 eps=0.001d0 group=TRUNK horizon=h1 global=4.492887d-4 maxabs=8.632134d-5 at=107
+N2EPS alpha=0.0d0 eps=0.001d0 group=ALL horizon=mix global=3.729847d-4 maxabs=8.632134d-5 at=TRUNK[107]
+N2EPS alpha=0.0d0 eps=3.0d-4 group=WTE horizon=h1 global=4.306960d-4 maxabs=1.895313d-4 at=257
+N2EPS alpha=0.0d0 eps=3.0d-4 group=WPE horizon=h1 global=5.887780d-4 maxabs=2.108884d-4 at=3
+N2EPS alpha=0.0d0 eps=3.0d-4 group=TRUNK horizon=h1 global=1.520726d-3 maxabs=3.133578d-4 at=38
+N2EPS alpha=0.0d0 eps=3.0d-4 group=ALL horizon=mix global=1.263408d-3 maxabs=3.133578d-4 at=TRUNK[38]
+N2EPS alpha=0.0d0 eps=1.0d-4 group=WTE horizon=h1 global=1.129496d-3 maxabs=4.493769d-4 at=283
+N2EPS alpha=0.0d0 eps=1.0d-4 group=WPE horizon=h1 global=1.521159d-3 maxabs=4.688330d-4 at=7
+N2EPS alpha=0.0d0 eps=1.0d-4 group=TRUNK horizon=h1 global=4.679361d-3 maxabs=1.136149d-3 at=50
+N2EPS alpha=0.0d0 eps=1.0d-4 group=ALL horizon=mix global=3.859232d-3 maxabs=1.136149d-3 at=TRUNK[50]
+N2DIR alpha=0.0d0 group=WTE horizon=h1 eps=0.01d0 gdot=2.708837d-2 sym=2.709409d-2 rel=2.108856d-4
+N2DIR alpha=0.0d0 group=WTE horizon=h1 eps=0.001d0 gdot=2.708837d-2 sym=2.712794d-2 rel=1.460613d-3
+N2DIR alpha=0.0d0 group=WTE horizon=h1 eps=1.0d-4 gdot=2.708837d-2 sym=2.729226d-2 rel=7.526631d-3
+N2DIR alpha=0.0d0 group=WPE horizon=h1 eps=0.01d0 gdot=-1.142868d-1 sym=-1.142238d-1 rel=5.505764d-4
+N2DIR alpha=0.0d0 group=WPE horizon=h1 eps=0.001d0 gdot=-1.142868d-1 sym=-1.143334d-1 rel=4.079675d-4
+N2DIR alpha=0.0d0 group=WPE horizon=h1 eps=1.0d-4 gdot=-1.142868d-1 sym=-1.141620d-1 rel=1.092098d-3
+N2DIR alpha=0.0d0 group=TRUNK horizon=h1 eps=0.01d0 gdot=1.034775d-1 sym=1.034746d-1 rel=2.801463d-5
+N2DIR alpha=0.0d0 group=TRUNK horizon=h1 eps=0.001d0 gdot=1.034775d-1 sym=1.035300d-1 rel=5.073727d-4
+N2DIR alpha=0.0d0 group=TRUNK horizon=h1 eps=1.0d-4 gdot=1.034775d-1 sym=1.035066d-1 rel=2.813487d-4
+N2EPS_SUMMARY alpha=0.0d0 global_1e-2=1.200446d-3 global_best=1.677944d-4 shrink=0.140
+N2EPS_PASS

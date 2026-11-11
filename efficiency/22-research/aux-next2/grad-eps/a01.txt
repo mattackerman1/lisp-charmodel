@@ -1,0 +1,53 @@
+
+; file: /workspace/efficiency/22-research/aux-next2/gpt-eff.lisp
+; in: DEFUN MAKE-WK*
+;     (IF GPT::*EW32*
+;         (GPT::MKV (* GPT::R 4 GPT::D))
+;         (GPT::MKD (* GPT::R 4 GPT::D)))
+; 
+; caught WARNING:
+;   undefined variable: GPT::*EW32*
+; 
+; compilation unit finished
+;   Undefined variable:
+;     *EW32*
+;   caught 1 WARNING condition
+N2EPS alpha=0.10000000149011612d0 eps=0.01d0 group=WTE horizon=h1+h2 global=2.716386d-3 maxabs=2.848969d-3 at=92
+N2EPS alpha=0.10000000149011612d0 eps=0.01d0 group=WPE horizon=h1+h2 global=2.494614d-3 maxabs=2.222259d-3 at=4
+N2EPS alpha=0.10000000149011612d0 eps=0.01d0 group=TRUNK horizon=h1+h2 global=1.550072d-4 maxabs=8.625330d-5 at=23
+N2EPS alpha=0.10000000149011612d0 eps=0.01d0 group=U horizon=h2 global=1.479847d-5 maxabs=3.283588d-7 at=6
+N2EPS alpha=0.10000000149011612d0 eps=0.01d0 group=ALL horizon=mix global=1.572035d-3 maxabs=2.848969d-3 at=WTE[92]
+N2EPS alpha=0.10000000149011612d0 eps=0.003d0 group=WTE horizon=h1+h2 global=2.508174d-4 maxabs=2.613415d-4 at=92
+N2EPS alpha=0.10000000149011612d0 eps=0.003d0 group=WPE horizon=h1+h2 global=2.293922d-4 maxabs=2.020993d-4 at=4
+N2EPS alpha=0.10000000149011612d0 eps=0.003d0 group=TRUNK horizon=h1+h2 global=1.886188d-4 maxabs=3.206067d-5 at=227
+N2EPS alpha=0.10000000149011612d0 eps=0.003d0 group=U horizon=h2 global=4.811839d-5 maxabs=1.261013d-6 at=27
+N2EPS alpha=0.10000000149011612d0 eps=0.003d0 group=ALL horizon=mix global=2.092406d-4 maxabs=2.613415d-4 at=WTE[92]
+N2EPS alpha=0.10000000149011612d0 eps=0.001d0 group=WTE horizon=h1+h2 global=1.267870d-4 maxabs=4.031792d-5 at=91
+N2EPS alpha=0.10000000149011612d0 eps=0.001d0 group=WPE horizon=h1+h2 global=1.297571d-4 maxabs=6.012646d-5 at=10
+N2EPS alpha=0.10000000149011612d0 eps=0.001d0 group=TRUNK horizon=h1+h2 global=5.655346d-4 maxabs=9.812712d-5 at=94
+N2EPS alpha=0.10000000149011612d0 eps=0.001d0 group=U horizon=h2 global=1.607052d-4 maxabs=3.768685d-6 at=44
+N2EPS alpha=0.10000000149011612d0 eps=0.001d0 group=ALL horizon=mix global=4.599158d-4 maxabs=9.812712d-5 at=TRUNK[94]
+N2EPS alpha=0.10000000149011612d0 eps=3.0d-4 group=WTE horizon=h1+h2 global=4.494164d-4 maxabs=2.243561d-4 at=178
+N2EPS alpha=0.10000000149011612d0 eps=3.0d-4 group=WPE horizon=h1+h2 global=4.146174d-4 maxabs=1.953082d-4 at=1
+N2EPS alpha=0.10000000149011612d0 eps=3.0d-4 group=TRUNK horizon=h1+h2 global=1.819191d-3 maxabs=3.103052d-4 at=233
+N2EPS alpha=0.10000000149011612d0 eps=3.0d-4 group=U horizon=h2 global=4.736814d-4 maxabs=1.245610d-5 at=41
+N2EPS alpha=0.10000000149011612d0 eps=3.0d-4 group=ALL horizon=mix global=1.481868d-3 maxabs=3.103052d-4 at=TRUNK[233]
+N2EPS alpha=0.10000000149011612d0 eps=1.0d-4 group=WTE horizon=h1+h2 global=1.095343d-3 maxabs=3.409983d-4 at=91
+N2EPS alpha=0.10000000149011612d0 eps=1.0d-4 group=WPE horizon=h1+h2 global=1.456876d-3 maxabs=6.363985d-4 at=8
+N2EPS alpha=0.10000000149011612d0 eps=1.0d-4 group=TRUNK horizon=h1+h2 global=5.519692d-3 maxabs=1.182436d-3 at=1
+N2EPS alpha=0.10000000149011612d0 eps=1.0d-4 group=U horizon=h2 global=1.609168d-3 maxabs=3.780744d-5 at=18
+N2EPS alpha=0.10000000149011612d0 eps=1.0d-4 group=ALL horizon=mix global=4.489151d-3 maxabs=1.182436d-3 at=TRUNK[1]
+N2DIR alpha=0.10000000149011612d0 group=WTE horizon=h1+h2 eps=0.01d0 gdot=5.653919d-2 sym=5.653350d-2 rel=1.005882d-4
+N2DIR alpha=0.10000000149011612d0 group=WTE horizon=h1+h2 eps=0.001d0 gdot=5.653919d-2 sym=5.653700d-2 rel=3.868909d-5
+N2DIR alpha=0.10000000149011612d0 group=WTE horizon=h1+h2 eps=1.0d-4 gdot=5.653919d-2 sym=5.631514d-2 rel=3.962730d-3
+N2DIR alpha=0.10000000149011612d0 group=WPE horizon=h1+h2 eps=0.01d0 gdot=4.667090d-1 sym=4.662206d-1 rel=1.046579d-3
+N2DIR alpha=0.10000000149011612d0 group=WPE horizon=h1+h2 eps=0.001d0 gdot=4.667090d-1 sym=4.667133d-1 rel=9.232276d-6
+N2DIR alpha=0.10000000149011612d0 group=WPE horizon=h1+h2 eps=1.0d-4 gdot=4.667090d-1 sym=4.667994d-1 rel=1.936659d-4
+N2DIR alpha=0.10000000149011612d0 group=TRUNK horizon=h1+h2 eps=0.01d0 gdot=7.100747d-2 sym=7.100529d-2 rel=3.064520d-5
+N2DIR alpha=0.10000000149011612d0 group=TRUNK horizon=h1+h2 eps=0.001d0 gdot=7.100747d-2 sym=7.104843d-2 rel=5.768574d-4
+N2DIR alpha=0.10000000149011612d0 group=TRUNK horizon=h1+h2 eps=1.0d-4 gdot=7.100747d-2 sym=7.067392d-2 rel=4.697431d-3
+N2DIR alpha=0.10000000149011612d0 group=U horizon=h2 eps=0.01d0 gdot=-2.645144d-3 sym=-2.644747d-3 rel=1.499832d-4
+N2DIR alpha=0.10000000149011612d0 group=U horizon=h2 eps=0.001d0 gdot=-2.645144d-3 sym=-2.645797d-3 rel=2.467522d-4
+N2DIR alpha=0.10000000149011612d0 group=U horizon=h2 eps=1.0d-4 gdot=-2.645144d-3 sym=-2.618849d-3 rel=9.940679d-3
+N2EPS_SUMMARY alpha=0.10000000149011612d0 global_1e-2=1.572035d-3 global_best=2.092406d-4 shrink=0.133
+N2EPS_PASS
